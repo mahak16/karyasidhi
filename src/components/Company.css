@@ -1,0 +1,58 @@
+.fixed-logos-row {
+  width: 480px; /* container width fixed for 3 logos + gaps */
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+}
+
+/* Base styles for logos */
+.fixed-logos-row img {
+  position: relative;
+  display: inline-block;
+}
+
+/* Swipe left animation (logos move out left then come back) */
+@keyframes swipeLeftAnim {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-100%); }
+  26%  { transform: translateX(100%); }
+  50%  { transform: translateX(0); }
+  100% { transform: translateX(0); }
+}
+
+/* Swipe right animation */
+@keyframes swipeRightAnim {
+  0%   { transform: translateX(0);  }
+  25%  { transform: translateX(100%);  }
+  26%  { transform: translateX(-100%);  }
+  50%  { transform: translateX(0);  }
+  100% { transform: translateX(0);  }
+}
+
+/* Apply swipe left animation */
+.swipe-left {
+  animation-name: swipeLeftAnim;
+  animation-duration: 4s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+/* Apply swipe right animation */
+.swipe-right {
+  animation-name: swipeRightAnim;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* Stagger animation delays for each logo */
+/* You can add more delays if you have more logos */
+.delay-0 {
+  animation-delay: 0s;
+}
+.delay-1 {
+  animation-delay: 2s;
+}
+.delay-2 {
+  animation-delay: 4s;
+}

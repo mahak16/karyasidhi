@@ -1,0 +1,28 @@
+@keyframes swipeIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes swipeOut {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-swipeIn {
+  background-color: #403937;
+  animation: swipeIn 0.5s forwards;
+}
+
+.animate-swipeOut {
+  background-color: #403937;
+  animation: swipeOut 0.5s forwards;
+
+}

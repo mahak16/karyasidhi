@@ -1,0 +1,207 @@
+@import "tailwindcss";
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body   {
+  font-family: 'Montserrat', sans-serif !important;
+}
+@keyframes animate-ball {
+   0% {
+    transform: translateY(0px) translateX(0) rotate(0);
+  }
+  30% {
+    transform: translateY(30px) translateX(50px) rotate(15deg);
+    transform-origin: center center;
+  }
+  50% {
+    transform: translateY(50px) translateX(100px) rotate(45deg);
+    transform-origin: right bottom;
+  }
+  80% {
+    transform: translateY(30px) translateX(50px) rotate(15deg);
+    transform-origin: left top;
+  }
+  100% {
+    transform: translateY(0px) translateX(0) rotate(0);
+    transform-origin: center center;
+  }
+}
+.animate-ball {
+  animation: animate-ball 8s ease-in-out infinite forwards;
+}
+
+
+
+ul li{
+  font-family: 'Montserrat', sans-serif !important;
+}
+.active-home::before {
+  position: absolute;
+  content: '';
+  bottom: -47px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 6px solid #ff4332;
+  opacity: 1; /* Always visible — match "active" behavior */
+}
+
+
+.nav-arrow::before {
+  content: '';
+  position: relative;
+  bottom: -41px; /* Align arrow at bottom of nav item */
+  left: 40%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 6px solid #ff4332;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+/* Trigger on hover */
+.nav-arrow:hover::before {
+  opacity: 1;
+}
+.group:hover .nav-arrow::before {
+  opacity: 1;
+  bottom: -47px
+}
+.banner-content::before {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 5px;
+  width: 2px;
+  height: 78%;
+  background: #ff4332;
+}
+
+/* Ripple animation for WhatsApp button */
+.animate-ripple {
+  animation: rippleExpand 2s infinite ease-out;
+}
+
+@keyframes rippleExpand {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Falling animation (natural gravitational fall) */
+.animate-fall-from-top {
+  animation: fallFromTop 1s cubic-bezier(0.1, 0.7, 0.3, 1) forwards;
+}
+
+@keyframes fallFromTop {
+  0% {
+    top: -200px; /* Start above the viewport */
+    opacity: 0; /* Invisible at the start */
+  }
+  10% {
+    opacity: 1; /* Fade in quickly as it starts falling */
+  }
+  90% {
+    top: 90%; /* Near the final position */
+    opacity: 1;
+  }
+  100% {
+    top: unset; /* Let the 'bottom' class take over */
+    bottom: 1.5rem; /* Matches 'bottom-6' (1.5rem) */
+    opacity: 1; /* Fully visible at the end */
+  }
+}
+
+/* Rising animation (straight up) */
+.animate-rise-to-top {
+  animation: riseToTop 1s ease-in-out forwards;
+}
+
+@keyframes riseToTop {
+  0% {
+    bottom: 1.5rem; /* Start at the final position (bottom-6) */
+    opacity: 1; /* Fully visible at the start */
+  }
+  10% {
+    bottom: 20%; /* Small dip down before rising */
+    opacity: 1;
+  }
+  80% {
+    opacity: 0; /* Start fading out as it rises */
+  }
+  100% {
+    top: -200px; /* Back to the top (matches -top-20) */
+    opacity: 0; /* Completely invisible at the top */
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 640px) {
+  @keyframes fallFromTop {
+    0% {
+      top: -20px;
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      top: 90%; /* Adjusted to be relative to the new bottom position */
+      opacity: 1;
+    }
+    100% {
+      top: unset;
+      bottom: 5rem; /* Matches 'bottom-20' (5rem) */
+      opacity: 1;
+    }
+  }
+
+  @keyframes riseToTop {
+    0% {
+      bottom: 5rem; /* Start at the new final position (bottom-20) */
+      opacity: 1;
+    }
+    10% {
+      bottom: 25%; /* Adjusted dip relative to new bottom position */
+      opacity: 1;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      top: -20px;
+      opacity: 0;
+    }
+  }
+}
+@keyframes pusher {
+  0% {
+    transform: scale(0.7);
+  }
+  33% {
+    transform: scale(0.7);
+  }
+  66% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.7);
+  }
+}
+
+.pusher-animation {
+  animation: pusher 10s linear infinite;
+}

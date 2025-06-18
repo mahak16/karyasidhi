@@ -1,0 +1,12 @@
+/* BallAnimation.css */
+@keyframes moveBall {
+  0% { transform: translateX(32%); }
+  25% { transform: translatey(-20%); }
+  50% { transform: translateX(20vw); }
+  75% { transform: translatey(-32%); }
+  100% { transform: translateX(20%); }
+}
+
+.animate-moveBall {
+  animation: moveBall 5s ease-in-out infinite alternate;
+}
