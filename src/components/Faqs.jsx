@@ -1,5 +1,5 @@
 import React from "react";
-//import Faq from "../assets/faq.jpg";
+import Faq from "../assets/Faq.jpg";
 import pattern from "../assets/pattern.png";
 import Ball from "../assets/Ball.png";
 import Acco from "./Acco"; // your updated accordion component
@@ -16,7 +16,7 @@ function Faqs() {
       <div className="bg-white flex lg:flex-row flex-col md:mx-20 lg:mx-0  relative">
         {/* Image Section */}
         <div className="flex-1/2 max-w-[1/2] w-full   flex relative lg:-mr-[100px] lg:mb-[100px] lg:-mt-[100px]">
-          {/* <img src={Faq} alt="faq" className="object-cover w-full" /> */}
+          <img src={Faq} alt="faq" className="object-cover w-full" />
         </div>
 
         {/* FAQ Section */}
