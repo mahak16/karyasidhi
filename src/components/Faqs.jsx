@@ -1,5 +1,5 @@
 import React from "react";
-import Faq from "../assets/faq.jpg";
+import Faq from "../assets/Faq.jpg";
 import pattern from "../assets/pattern.png";
 import Ball from "../assets/Ball.png";
 import Acco from "./Acco"; // your updated accordion component
